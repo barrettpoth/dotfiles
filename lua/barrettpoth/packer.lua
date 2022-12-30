@@ -15,14 +15,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
-
+    use { 'catppuccin/nvim' }
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -56,7 +49,7 @@ return require('packer').startup(function(use)
     }
 
     use { 'kyazdani42/nvim-web-devicons' }
-    use { 'akinsho/bufferline.nvim', tag = "v3.*" }
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", after = "catppuccin" }
     use { 'farmergreg/vim-lastplace' }
     use { 'RRethy/vim-illuminate' }
     use {
@@ -112,6 +105,7 @@ return require('packer').startup(function(use)
     use { 'lukas-reineke/indent-blankline.nvim' }
 
     use { 'christoomey/vim-tmux-navigator' }
+    use { 'marklcrns/vim-smartq' }
 
     use("github/copilot.vim")
 end)
