@@ -15,7 +15,8 @@ return require('packer').startup(function(use)
         end
     }
 
-    use { 'catppuccin/nvim' }
+    use({ 'rose-pine/neovim', as = 'rose-pine', })
+
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -49,7 +50,7 @@ return require('packer').startup(function(use)
     }
 
     use { 'kyazdani42/nvim-web-devicons' }
-    use { 'akinsho/bufferline.nvim', tag = "v3.*", after = "catppuccin" }
+    use { 'akinsho/bufferline.nvim' }
     use { 'farmergreg/vim-lastplace' }
     use { 'RRethy/vim-illuminate' }
     use {
