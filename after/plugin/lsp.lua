@@ -87,9 +87,7 @@ lsp.setup_nvim_cmp({
         -- Set `select` to `false` to only confirm explicitly selected items.
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expandable() then
+            if luasnip.expandable() then
                 luasnip.expand({})
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
@@ -103,9 +101,7 @@ lsp.setup_nvim_cmp({
             "s",
         }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
+            if luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             else
                 fallback()
@@ -119,7 +115,7 @@ lsp.setup_nvim_cmp({
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
             -- Kind icons
-            vim_item.kind = string.format('%s %s', cmp_kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+            vim_item.kind = string.format('%s', cmp_kind_icons[vim_item.kind])
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 nvim_lua = "[NVIM_LUA]",
@@ -211,7 +207,7 @@ local function diagnostic_config()
     return {
         virtual_text = true,
         signs = true,
-        update_in_insert = true,
+        update_in_insert = false,
         underline = true,
         severity_sort = true,
         float = {
