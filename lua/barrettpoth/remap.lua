@@ -45,9 +45,6 @@ vim.keymap.set("n", "<C-S-l>", ":vertical resize +2<CR>")
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
 
--- remove highlighted search term
-vim.keymap.set("n", "<localleader><esc>", ":nohls<CR>")
-
 -- add diagnostics to quickfix list
 vim.keymap.set("n", "<leader>qd", vim.diagnostic.setqflist)
 
