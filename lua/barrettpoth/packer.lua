@@ -108,5 +108,7 @@ return require('packer').startup(function(use)
     use { 'christoomey/vim-tmux-navigator' }
     use { 'marklcrns/vim-smartq' }
 
+    use { 'camgraff/telescope-tmux.nvim' }
+
     use("github/copilot.vim")
 end)
