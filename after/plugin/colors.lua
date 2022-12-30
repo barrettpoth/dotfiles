@@ -37,7 +37,8 @@ require("catppuccin").setup({
         notify = false,
         mini = false,
         treesitter = true,
-        illuminate = true
+        illuminate = true,
+        bufferline = true,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
