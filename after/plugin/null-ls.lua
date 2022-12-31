@@ -9,6 +9,7 @@ null_ls.setup({
             extra_args = {},
         }),
         formatting.black,
+        formatting.beautysh,
     },
     on_attach = require("lsp-format").on_attach
 })
