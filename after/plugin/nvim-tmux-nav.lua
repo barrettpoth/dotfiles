@@ -7,4 +7,3 @@ require('nvim-tmux-navigation').setup({
         right = "<C-l>",
     }
 })
-
