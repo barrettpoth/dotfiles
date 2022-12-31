@@ -111,5 +111,7 @@ return require('packer').startup(function(use)
 
     use { 'camgraff/telescope-tmux.nvim' }
 
-    use("github/copilot.vim")
+    use { "github/copilot.vim" }
+
+    use { "folke/zen-mode.nvim", }
 end)
