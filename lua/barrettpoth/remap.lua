@@ -8,10 +8,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- append next line to this one but keep cursor in same place
 vim.keymap.set("n", "J", "mzJ`z")
 
--- don't highlight search term after selected
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
 -- pasted over item and deleted item goes to nowhere buffer
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
