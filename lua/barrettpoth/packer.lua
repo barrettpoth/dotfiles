@@ -105,7 +105,8 @@ return require('packer').startup(function(use)
 
     use { 'lukas-reineke/indent-blankline.nvim' }
 
-    use { 'christoomey/vim-tmux-navigator' }
+    use { "alexghergh/nvim-tmux-navigation" }
+
     use { 'marklcrns/vim-smartq' }
 
     use { 'camgraff/telescope-tmux.nvim' }
