@@ -43,3 +43,5 @@ vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist)
 
 -- add references to quickfix list
 vim.keymap.set("n", "<leader>qr", vim.lsp.buf.references)
+
+vim.keymap.set("v", "g<C-b>", "g<C-a>")
