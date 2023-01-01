@@ -31,7 +31,7 @@ vim.keymap.set("n", "<A-j>", ":resize +2<CR>")
 vim.keymap.set("n", "<A-h>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<A-l>", ":vertical resize +2<CR>")
 
--- Navigate buffers
+-- navigate buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
 
@@ -44,4 +44,5 @@ vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist)
 -- add references to quickfix list
 vim.keymap.set("n", "<leader>qr", vim.lsp.buf.references)
 
+-- remap increment nums to avoid tmux leader conflict
 vim.keymap.set("v", "g<C-b>", "g<C-a>")
