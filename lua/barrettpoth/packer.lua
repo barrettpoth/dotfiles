@@ -114,4 +114,10 @@ return require('packer').startup(function(use)
     use { "github/copilot.vim" }
 
     use { "folke/zen-mode.nvim", }
+
+    use { 'preservim/vim-markdown' }
+
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
 end)
