@@ -117,4 +117,6 @@ return require('packer').startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+    use { 'tpope/vim-sleuth' }
 end)
