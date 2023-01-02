@@ -23,10 +23,10 @@ vim.keymap.set("n", "<localleader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Resize with ctrl shift hjkl
-vim.keymap.set("n", "<A-k>", ":resize -2<CR>")
-vim.keymap.set("n", "<A-j>", ":resize +2<CR>")
-vim.keymap.set("n", "<A-h>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<A-l>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<S-A-k>", ":resize -2<CR>")
+vim.keymap.set("n", "<S-A-j>", ":resize +2<CR>")
+vim.keymap.set("n", "<S-A-h>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<S-A-l>", ":vertical resize +2<CR>")
 
 -- navigate buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
