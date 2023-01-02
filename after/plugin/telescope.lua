@@ -13,13 +13,24 @@ require("telescope").setup {
 
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-vim.keymap.set('n', '<leader>gg', builtin.live_grep, {})
+local nmap = function(keys, func, desc)
+    if desc then
+        desc = 'Telescope: ' .. desc
+    end
 
-vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
-vim.keymap.set('n', '<leader>gl', builtin.git_commits, {})
-vim.keymap.set('n', '<leader>gbl', builtin.git_bcommits, {})
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+    vim.keymap.set('n', keys, func, { desc = desc })
+end
+nmap('<leader>f', builtin.find_files, '[F]ind files')
+nmap('<leader>tg', builtin.live_grep, '[T]elescope by live [g]rep')
 
-vim.keymap.set('n', '<leader>tm', ":Telescope tmux sessions<CR>", {})
+nmap('<leader>ts', builtin.git_status, '[T]elescope git [s]tatus')
+nmap('<leader>tll', builtin.git_commits, '[T]elescope git commit [l]og')
+nmap('<leader>tbl', builtin.git_bcommits, '[T]elescope [b]uffer commit [l]og')
+nmap('<leader>tb', builtin.git_branches, '[T]elescope git [b]ranch')
+
+nmap('<leader>td', '<cmd>Telescope diagnostics<CR>', '[T]elescope diagnostics in telescope')
+
+nmap('<leader>th', '<cmd>Telescope help_tags<cr>', '[T]elescope [h]elp tags')
+nmap('<leader>tk', '<cmd>Telescope keymaps<cr>', '[T]elescope [k]eymaps')
+
+nmap('<leader>tt', ":Telescope tmux sessions<CR>", '[T]elescope [t]mux sessions')

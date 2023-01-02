@@ -185,7 +185,6 @@ lsp.on_attach(function(client, bufnr)
     nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
     nmap('[d', vim.diagnostic.goto_prev, 'Go to next [d]iagnostic')
     nmap(']d', vim.diagnostic.goto_next, 'Go to previous [d]iagnostic')
-    nmap('<leader>d', '<cmd>Telescope diagnostics<CR>', 'Open diagnostics in telescope')
     nmap("<C-d>", vim.diagnostic.open_float, 'Open diagnostic in floating window')
 
     nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
