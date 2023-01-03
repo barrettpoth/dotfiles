@@ -13,8 +13,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use({ 'rose-pine/neovim', as = 'rose-pine', })
-
+    use { "olimorris/onedarkpro.nvim" }
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use { -- Additional text objects via treesitter

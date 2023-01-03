@@ -46,5 +46,5 @@ vim.keymap.set("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>")
 vim.keymap.set("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>")
 vim.keymap.set("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>")
 
--- I'm sure there is a better way to do this, but bufferline colors are jacked setting colorscheme here
-vim.cmd.colorscheme('rose-pine')
+-- I'm sure there is a better way to do this, but bufferline colors are jacked setting colorscheme here too
+vim.cmd.colorscheme("onedark")
