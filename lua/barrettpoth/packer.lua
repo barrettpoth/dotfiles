@@ -118,4 +118,6 @@ return require('packer').startup(function(use)
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
     use { 'tpope/vim-sleuth' }
+
+    use { 'lewis6991/impatient.nvim' }
 end)
