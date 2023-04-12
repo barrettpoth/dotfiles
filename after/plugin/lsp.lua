@@ -24,7 +24,7 @@ lsp.ensure_installed({
     'pyright',
     'tsserver',
     'eslint',
-    'sumneko_lua',
+    'lua_ls',
     'rust_analyzer',
 })
 
@@ -152,7 +152,7 @@ lsp.setup_nvim_cmp({
 lsp.nvim_workspace()
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
