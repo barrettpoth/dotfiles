@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use { "olimorris/onedarkpro.nvim" }
+    use { "projekt0n/github-nvim-theme" }
 
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use { -- Additional text objects via treesitter
