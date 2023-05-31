@@ -19,7 +19,24 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_b = {
+            'branch',
+            'diff',
+            {
+                'diagnostics',
+                sources = { 'nvim_lsp' },
+                sections = { 'error', 'warn', 'info', 'hint' },
+                symbols = {
+                    hint = "",
+                    info = "",
+                    warn = "",
+                    error = "",
+                },
+                colored = true,
+                update_in_insert = false,
+                always_visible = false,
+            },
+        },
         lualine_c = {
             {
                 'filename',
