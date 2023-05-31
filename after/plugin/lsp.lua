@@ -1,6 +1,5 @@
 local lsp = require("lsp-zero")
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 require("lsp-format").setup {}
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -10,14 +9,34 @@ lsp.set_preferences({
     set_lsp_keymaps = true,
     configure_diagnostics = true,
     cmp_capabilities = true,
-    manage_nvim_cmp = true,
-    call_servers = 'local',
-    sign_icons = {
-        error = "",
-        warn = "",
-        hint = "",
-        info = "",
+    manage_nvim_cmp = {
+        set_basic_mappings = false,
+        set_extra_mappings = false,
+        set_sources = 'recommended',
+        use_luasnip = true,
+        set_format = true,
+        documentation_window = true
     },
+    call_servers = 'local',
+})
+
+-- cmp setup
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        -- disable tabs in cmp so that gh copilot works
+        ['<Tab>'] = cmp.config.disable,
+        ['<S-Tab>'] = cmp.config.disable
+    }),
+})
+
+
+lsp.set_sign_icons({
+    error = "",
+    warn = "",
+    hint = "",
+    info = "",
 })
 
 lsp.ensure_installed({
@@ -26,128 +45,8 @@ lsp.ensure_installed({
     'eslint',
     'lua_ls',
     'rust_analyzer',
+    'ruby_ls'
 })
-
--- cmp completion inspired by https://github.com/LunarVim/Neovim-from-scratch
---   פּ ﯟ   some other good icons
--- find more here: https://www.nerdfonts.com/cheat-sheet
-local cmp_kind_icons = {
-    Text = "",
-    Method = "m",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "",
-    Interface = "",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-}
-
-local check_backspace = function()
-    local col = vim.fn.col(".") - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-end
-
-lsp.setup_nvim_cmp({
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body) -- For `luasnip` users.
-        end,
-    },
-    mapping = {
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete({}), { "i", "c" }),
-        ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ["<C-e>"] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if luasnip.expandable() then
-                luasnip.expand({})
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif check_backspace() then
-                fallback()
-            else
-                fallback()
-            end
-        end, {
-            "i",
-            "s",
-        }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, {
-            "i",
-            "s",
-        }),
-    },
-    formatting = {
-        fields = { "kind", "abbr", "menu" },
-        format = function(entry, vim_item)
-            -- Kind icons
-            vim_item.kind = string.format('%s', cmp_kind_icons[vim_item.kind])
-            vim_item.menu = ({
-                nvim_lsp = "[LSP]",
-                nvim_lua = "[NVIM_LUA]",
-                luasnip = "[Snippet]",
-                buffer = "[Buffer]",
-                path = "[Path]",
-            })[entry.source.name]
-            return vim_item
-        end,
-    },
-    sources = {
-        { name = "nvim_lsp" },
-        { name = "nvim_lua" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "path" },
-    },
-    confirm_opts = {
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = false,
-    },
-    window = {
-        documentation = {
-            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        },
-    },
-    experimental = {
-        ghost_text = false,
-        native_menu = false,
-    },
-})
-
 
 lsp.nvim_workspace()
 
@@ -163,7 +62,7 @@ lsp.configure('lua_ls', {
     on_attach = require("lsp-format").on_attach
 })
 
-lsp.configure('ruby_lsp', {
+lsp.configure('ruby_ls', {
     default_config = {
         cmd = { "bundle", "exec", "ruby-lsp" },
     }

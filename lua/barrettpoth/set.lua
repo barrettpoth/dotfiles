@@ -35,3 +35,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.laststatus = 3
+
+-- needed to make nvim-cmp work properly
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
