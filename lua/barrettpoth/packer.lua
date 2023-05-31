@@ -86,6 +86,8 @@ return require('packer').startup(function(use)
         }
     }
 
+    use { 'lvimuser/lsp-inlayhints.nvim' }
+
     -- integrate non-ls things (like prettier, black, etc) into nvim's lsp
     use { "jose-elias-alvarez/null-ls.nvim", }
 
