@@ -136,4 +136,9 @@ return require('packer').startup(function(use)
             'zidhuss/neotest-minitest',
         }
     }
+
+    use {
+        "folke/noice.nvim",
+        requires = { "MunifTanjim/nui.nvim" }
+    }
 end)

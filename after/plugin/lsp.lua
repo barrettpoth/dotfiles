@@ -150,8 +150,6 @@ local function diagnostic_config()
             style = "minimal",
             border = "rounded",
             source = "always",
-            header = "",
-            prefix = ""
         },
     }
 end
