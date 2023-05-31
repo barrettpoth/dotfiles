@@ -126,4 +126,14 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-sleuth' }
 
     use { 'lewis6991/impatient.nvim' }
+
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            'zidhuss/neotest-minitest',
+        }
+    }
 end)

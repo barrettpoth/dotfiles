@@ -1,3 +1,7 @@
+require("neodev").setup({
+    library = { plugins = { "neotest" }, types = true },
+})
+
 local lsp = require("lsp-zero")
 local cmp = require("cmp")
 require("lsp-format").setup {}
@@ -163,4 +167,3 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 })
 
 require('fidget').setup()
-require('neodev').setup()
