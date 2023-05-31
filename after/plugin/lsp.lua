@@ -163,8 +163,13 @@ lsp.configure('lua_ls', {
     on_attach = require("lsp-format").on_attach
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.configure('ruby_lsp', {
+    default_config = {
+        cmd = { "bundle", "exec", "ruby-lsp" },
+    }
+})
 
+lsp.on_attach(function(client, bufnr)
     -- Disable LSP server formatting, let null-ls sources format
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
@@ -196,13 +201,11 @@ lsp.on_attach(function(client, bufnr)
 
     -- have to require illuminate plugin here - used for highlighted cursor word
     require 'illuminate'.on_attach(client)
-
 end)
 
 lsp.setup()
 
 local function diagnostic_config()
-
     return {
         virtual_text = true,
         signs = true,
