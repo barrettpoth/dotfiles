@@ -3,6 +3,7 @@ local neotest = require('neotest')
 neotest.setup({
     adapters = {
         require('neotest-minitest'),
+        require('neotest-rspec'),
     },
 })
 

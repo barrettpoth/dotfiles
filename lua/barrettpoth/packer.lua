@@ -136,6 +136,7 @@ return require('packer').startup(function(use)
             "nvim-treesitter/nvim-treesitter",
             "antoinemadec/FixCursorHold.nvim",
             'zidhuss/neotest-minitest',
+            "olimorris/neotest-rspec",
         }
     }
 
