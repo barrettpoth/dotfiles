@@ -1,3 +1,21 @@
+-- open nvim-tree when opening a directory
+local function open_nvim_tree(data)
+    -- buffer is a directory
+    local directory = vim.fn.isdirectory(data.file) == 1
+
+    if not directory then
+        return
+    end
+
+    -- change to the directory
+    vim.cmd.cd(data.file)
+
+    -- open the tree
+    require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
 local nvim_tree = require("nvim-tree")
 local nvim_tree_config = require("nvim-tree.config")
 local tree_cb = nvim_tree_config.nvim_tree_callback
@@ -49,13 +67,13 @@ nvim_tree.setup {
         },
     },
     view = {
-        width = 30,
+        width = 50,
         side = "left",
         mappings = {
             list = {
                 { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-                { key = "h", cb = tree_cb "close_node" },
-                { key = "v", cb = tree_cb "vsplit" },
+                { key = "h",                  cb = tree_cb "close_node" },
+                { key = "v",                  cb = tree_cb "vsplit" },
             },
         },
     },
