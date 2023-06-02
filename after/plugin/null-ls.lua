@@ -10,6 +10,7 @@ null_ls.setup({
         }),
         formatting.black,
         formatting.beautysh,
+        formatting.rubocop,
     },
     on_attach = require("lsp-format").on_attach
 })
