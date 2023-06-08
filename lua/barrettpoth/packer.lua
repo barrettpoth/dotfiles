@@ -144,4 +144,14 @@ return require('packer').startup(function(use)
         "folke/noice.nvim",
         requires = { "MunifTanjim/nui.nvim" }
     }
+
+    -- Packer
+    use({
+        "jackMort/ChatGPT.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    })
 end)
