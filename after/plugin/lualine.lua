@@ -27,7 +27,7 @@ require('lualine').setup {
                 sources = { 'nvim_lsp' },
                 sections = { 'error', 'warn', 'info', 'hint' },
                 symbols = {
-                    hint = "",
+                    hint = "",
                     info = "",
                     warn = "",
                     error = "",

@@ -12,7 +12,7 @@ require("bufferline").setup {
         diagnostics_update_in_insert = false,
         diagnostics_indicator = function(count, level)
             local icons = {
-                hint = "",
+                hint = "",
                 info = "",
                 warning = "",
                 error = "",

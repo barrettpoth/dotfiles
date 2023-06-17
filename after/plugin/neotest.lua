@@ -4,7 +4,7 @@ neotest.setup({
     adapters = {
         require('neotest-minitest'),
         require('neotest-rspec'),
-    },
+    }
 })
 
 local nmap = function(keys, func, desc)
