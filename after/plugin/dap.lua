@@ -37,3 +37,56 @@ dap_python.setup('~/.virtualenvs/debugpy/bin/python')
 vim.keymap.set('n', '<Leader>dt', function() dap_python.test_method() end)
 vim.keymap.set('n', '<Leader>dT', function() dap_python.test_class() end)
 vim.keymap.set('v', '<Leader>dv', function() dap_python.debug_selection() end)
+
+-- dap js
+require("dap-vscode-js").setup({
+    adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' }, -- which adapters to register in nvim-dap
+})
+
+for _, language in ipairs({ "typescript", "typescriptreact", "javascript" }) do
+    dap.configurations[language] = {
+        {
+            type = "pwa-node",
+            request = "attach",
+            processId = require 'dap.utils'.pick_process,
+            name = "Attach debugger to existing `node --inspect` process",
+            sourceMaps = true,
+            resolveSourceMapLocations = {
+                "${workspaceFolder}/**",
+                "!**/node_modules/**" },
+            cwd = "${workspaceFolder}/src",
+            skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
+        },
+        {
+            type = "pwa-chrome",
+            name = "Launch Chrome",
+            request = "launch",
+            url = "http://localhost:3000",
+            skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
+        },
+        {
+            type = "pwa-chrome",
+            name = "Attach - Remote Debugging",
+            request = "attach",
+            program = "${file}",
+            cwd = vim.fn.getcwd(),
+            sourceMaps = true,
+            protocol = "inspector",
+            port = 9222,
+            webRoot = "${workspaceFolder}",
+            skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
+        },
+        -- only if language is javascript, offer this debug action
+        language == "javascript" and {
+            -- use nvim-dap-vscode-js's pwa-node debug adapter
+            type = "pwa-node",
+            -- launch a new process to attach the debugger to
+            request = "launch",
+            -- name of the debug action you have to select for this config
+            name = "Launch file in new node process",
+            -- launch current file
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+        } or nil,
+    }
+end
