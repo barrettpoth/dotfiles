@@ -2,7 +2,6 @@ local dap = require("dap")
 local dapui = require("dapui")
 local dap_python = require("dap-python")
 require('dap-ruby').setup()
-require('dap-ruby').setup()
 require("nvim-dap-virtual-text").setup()
 
 vim.keymap.set('n', '<Leader>dr', function() dap.continue() end)
@@ -20,7 +19,40 @@ vim.keymap.set('n', '<Leader>dx', function()
 end)
 
 -- dap-ui
-dapui.setup()
+dapui.setup({
+    layouts = { {
+        elements = {
+            {
+                id = "breakpoints",
+                size = 0.25
+            },
+            {
+                id = "scopes",
+                size = 0.25
+            },
+            {
+                id = "watches",
+                size = 0.25
+            },
+            {
+                id = "stacks",
+                size = 0.25
+            }
+        },
+        position = "left",
+        size = 80
+    }, {
+        elements = { {
+            id = "repl",
+            size = 0.5
+        }, {
+            id = "console",
+            size = 0.5
+        } },
+        position = "bottom",
+        size = 18
+    } },
+})
 dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
 end
