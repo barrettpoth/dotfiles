@@ -20,14 +20,6 @@ M.configs = {
   },
   eslint = true,
   pyright = true,
-  jsonls = {
-    settings = {
-      json = {
-        schemas = require("schemastore").json.schemas(),
-        validate = { enable = true },
-      },
-    },
-  },
   tsserver = {
     filetypes = {
       "javascript",

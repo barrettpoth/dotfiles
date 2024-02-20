@@ -5,12 +5,6 @@ return {
     { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
     { "suketa/nvim-dap-ruby", dependencies = { "mfussenegger/nvim-dap" } },
     { "mfussenegger/nvim-dap-python", dependencies = { "mfussenegger/nvim-dap" } },
-    { "mxsdev/nvim-dap-vscode-js", dependencies = { "mfussenegger/nvim-dap" } },
-    {
-      "microsoft/vscode-js-debug",
-      lazy = true,
-      build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-    },
   },
   config = function()
     local dap = require "dap"
@@ -117,11 +111,6 @@ return {
       dap_python.debug_selection()
     end)
 
-    -- dap js
-    require("dap-vscode-js").setup {
-      adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
-    }
-
     for _, language in ipairs { "typescript", "typescriptreact", "javascript" } do
       dap.configurations[language] = {
         {
@@ -156,20 +145,6 @@ return {
           webRoot = "${workspaceFolder}",
           skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
         },
-        -- only if language is javascript, offer this debug action
-        language == "javascript"
-            and {
-              -- use nvim-dap-vscode-js's pwa-node debug adapter
-              type = "pwa-node",
-              -- launch a new process to attach the debugger to
-              request = "launch",
-              -- name of the debug action you have to select for this config
-              name = "Launch file in new node process",
-              -- launch current file
-              program = "${file}",
-              cwd = "${workspaceFolder}",
-            }
-          or nil,
       }
     end
   end,
