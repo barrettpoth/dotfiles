@@ -56,9 +56,10 @@ M.configs = {
       },
     },
   },
-  solargraph = false,
-  ruby_ls = { cmd = { "bundle", "exec", "ruby-lsp" } },
-  sorbet = true,
+  solargraph = true,
+  -- ruby_ls = { cmd = { "bundle", "exec", "ruby-lsp-rails" } },
+  sorbet = false,
   rust_analyzer = false,
+  tailwindcss = true,
 }
 return M

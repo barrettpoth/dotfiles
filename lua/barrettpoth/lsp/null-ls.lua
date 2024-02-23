@@ -13,6 +13,8 @@ null_ls.setup {
     formatting.black,
     formatting.beautysh,
     formatting.rubocop,
+    formatting.erb_lint,
+    formatting.htmlbeautifier,
     formatting.sql_formatter,
     formatting.rustfmt,
     diagnostics.rubocop.with {
