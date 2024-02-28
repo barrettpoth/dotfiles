@@ -41,11 +41,6 @@ return {
     dependencies = { "kyazdani42/nvim-web-devicons", lazy = true },
   },
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
-  },
-
   "kyazdani42/nvim-web-devicons",
 
   "farmergreg/vim-lastplace",

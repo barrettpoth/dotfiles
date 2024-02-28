@@ -1,6 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  tag = "nightly", -- optional, updated every week. (see issue #1193)
+  tag = "v1",
   config = function()
     local diagnostic_icons = require("barrettpoth/utils").diagnostic_icons
 
@@ -23,8 +23,6 @@ return {
     vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
     local nvim_tree = require "nvim-tree"
-    local nvim_tree_config = require "nvim-tree.config"
-    local tree_cb = nvim_tree_config.nvim_tree_callback
 
     nvim_tree.setup {
       update_focused_file = {
@@ -75,13 +73,6 @@ return {
       view = {
         width = 50,
         side = "left",
-        mappings = {
-          list = {
-            { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-            { key = "h", cb = tree_cb "close_node" },
-            { key = "v", cb = tree_cb "vsplit" },
-          },
-        },
       },
     }
 
