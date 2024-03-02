@@ -15,12 +15,7 @@ return {
 
       -- change to the directory
       vim.cmd.cd(data.file)
-
-      -- open the tree
-      require("nvim-tree.api").tree.open()
     end
-
-    vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
     local nvim_tree = require "nvim-tree"
 
@@ -28,6 +23,11 @@ return {
       update_focused_file = {
         enable = true,
         update_cwd = true,
+      },
+      actions = {
+        open_file = {
+          quit_on_open = true,
+        },
       },
       renderer = {
         root_folder_modifier = ":t",
