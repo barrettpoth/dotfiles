@@ -7,5 +7,6 @@ require("mason-lspconfig").setup {
     "lua_ls",
     "rust_analyzer",
     "ruby_ls",
+    "marksman",
   },
 }

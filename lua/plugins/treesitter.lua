@@ -22,6 +22,10 @@ return {
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
+        -- list of language that will be disabled
+        disable = {
+          "markdown", -- disabled because using pandoc for syntax highlighting
+        },
       },
 
       indent = { enable = true, disable = { "python" } },

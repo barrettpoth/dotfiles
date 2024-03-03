@@ -41,8 +41,6 @@ return {
     dependencies = { "kyazdani42/nvim-web-devicons", lazy = true },
   },
 
-  "kyazdani42/nvim-web-devicons",
-
   "farmergreg/vim-lastplace",
 
   "RRethy/vim-illuminate",
@@ -61,8 +59,6 @@ return {
   "marklcrns/vim-smartq",
 
   "camgraff/telescope-tmux.nvim",
-
-  "preservim/vim-markdown",
 
   {
     "iamcco/markdown-preview.nvim",

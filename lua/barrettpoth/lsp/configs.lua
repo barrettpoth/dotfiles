@@ -64,5 +64,6 @@ M.configs = {
     active = true,
     filetypes = { "html", "eruby" },
   },
+  marksman = {},
 }
 return M
