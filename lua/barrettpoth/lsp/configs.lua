@@ -60,6 +60,9 @@ M.configs = {
   -- ruby_ls = { cmd = { "bundle", "exec", "ruby-lsp-rails" } },
   sorbet = false,
   rust_analyzer = false,
-  tailwindcss = true,
+  tailwindcss = {
+    active = true,
+    filetypes = { "html", "eruby" },
+  },
 }
 return M
