@@ -1,0 +1,9 @@
+[init]
+    defaultBranch = main
+[user]
+    name = Barrett Poth
+    email = barrett@rnwbl.com
+[pager]
+	branch = false
+	log = false
+    diff = false

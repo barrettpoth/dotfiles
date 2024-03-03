@@ -1,0 +1,25 @@
+# Custom Aliases - this file is called by .zshrc
+
+# file listing
+alias ll='ls -lFh'
+alias lsa='ls -lahF'
+
+# neovim default
+alias vim='nvim'
+alias vimdiff='nvim -d'
+
+# start clojure server for nvim
+alias clj-start="clojure -Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} cider/cider-nrepl {:mvn/version \"0.25.0\"}}}' -m nrepl.cmdline --middleware '[\"cider.nrepl/cider-middleware\"]'"
+
+# nvim config
+alias nc="cd $HOME/.config/nvim && nvim ."
+
+# notes
+alias n="cd $HOME/iCloudDrive/notes && nvim ."
+alias nn='cd $HOME/iCloudDrive/notes && nvim "$(date +%Y.%m.%d) - notes.md"'
+alias ntd='cd $HOME/iCloudDrive/notes && nvim "todo.md"'
+alias ns='cd $HOME/iCloudDrive/notes && nvim "scratch.md"'
+alias nwn='cd $HOME/iCloudDrive/notes && nvim "work/$(date +%Y.%m.%d) - notes.md"'
+alias nwtd='cd $HOME/iCloudDrive/notes && nvim "work/todo.md"'
+alias nws='cd $HOME/iCloudDrive/notes && nvim "work/scratch.md"'
+alias nj='cd $HOME/iCloudDrive/notes && nvim "journal/$(date +%Y.%m.%d).md"'

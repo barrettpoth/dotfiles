@@ -1,0 +1,7 @@
+#compdef dsptch-etl
+
+_dsptch_etl_completion() {
+  eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _DSPTCH_ETL_COMPLETE=complete_zsh dsptch-etl)
+}
+
+compdef _dsptch_etl_completion dsptch-etl
