@@ -15,11 +15,14 @@ alias clj-start="clojure -Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} cider/ci
 alias nc="cd $HOME/.config/nvim && nvim ."
 
 # notes
-alias n="cd $HOME/iCloudDrive/notes && nvim ."
-alias nn='cd $HOME/iCloudDrive/notes && nvim "$(date +%Y.%m.%d) - notes.md"'
-alias ntd='cd $HOME/iCloudDrive/notes && nvim "todo.md"'
-alias ns='cd $HOME/iCloudDrive/notes && nvim "scratch.md"'
-alias nwn='cd $HOME/iCloudDrive/notes && nvim "work/$(date +%Y.%m.%d) - notes.md"'
-alias nwtd='cd $HOME/iCloudDrive/notes && nvim "work/todo.md"'
-alias nws='cd $HOME/iCloudDrive/notes && nvim "work/scratch.md"'
-alias nj='cd $HOME/iCloudDrive/notes && nvim "journal/$(date +%Y.%m.%d).md"'
+NOTES=$HOME/iCloudDrive/notes/
+WORK=$HOME/iCloudDrive/notes/work/rnwbl/
+alias n="cd $NOTES && nvim ."
+alias nn='cd $NOTES && nvim "personal/$(date +%Y.%m.%d) - notes.md"'
+alias ntd='cd $NOTES && nvim personal/todo.md'
+alias ns='cd $NOTES && nvim personal/scratch.md'
+alias nw='cd $WORK && nvim .'
+alias nwn='cd $WORK && nvim "$(date +%Y.%m.%d) - notes.md"'
+alias nwtd='cd $WORK && nvim todo.md'
+alias nws='cd $WORK && nvim scratch.md'
+alias nj='cd $NOTES && nvim "journal/$(date +%Y.%m.%d).md"'
