@@ -8,6 +8,7 @@ return {
       "antoinemadec/FixCursorHold.nvim",
       "zidhuss/neotest-minitest",
       "olimorris/neotest-rspec",
+      "nvim-neotest/nvim-nio",
     },
     config = function()
       local neotest = require "neotest"
