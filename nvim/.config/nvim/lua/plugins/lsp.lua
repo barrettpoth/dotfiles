@@ -25,9 +25,6 @@ return {
 
     "b0o/schemastore.nvim",
 
-    -- integrate non-ls things (like prettier, black, etc) into nvim's lsp
-    "jose-elias-alvarez/null-ls.nvim",
-
     -- wrapper around native neovim lsp formatting that does async format on save and a few more things
     "lukas-reineke/lsp-format.nvim",
 
@@ -128,9 +125,6 @@ return {
         },
       }
     end
-
-    -- setup null-ls
-    require "barrettpoth/lsp/null-ls"
 
     -- setup lsp diagnostics
     require "barrettpoth/lsp/diagnostics"
