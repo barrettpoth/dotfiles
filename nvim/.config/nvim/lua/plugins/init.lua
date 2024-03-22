@@ -23,8 +23,6 @@ return {
 
   "dinhhuy258/git.nvim",
 
-  "lewis6991/gitsigns.nvim",
-
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
