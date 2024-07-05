@@ -64,6 +64,8 @@ M.configs = {
     active = true,
     filetypes = { "html", "eruby" },
   },
-  marksman = {},
+  marksman = {
+    filetypes = { "markdown", "pandoc" },
+  },
 }
 return M

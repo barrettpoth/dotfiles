@@ -57,7 +57,7 @@ return {
         },
       },
     },
-    markdown = false,
+    markdown = {},
     health = {
       checker = true, -- Disable if you don't want health checks to run
     },

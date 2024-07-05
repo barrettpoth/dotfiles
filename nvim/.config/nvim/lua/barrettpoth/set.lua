@@ -46,4 +46,4 @@ vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.foldmethod = "manual"
 
-vim.o.formatoptions = "jcrqlpa" -- see :h fo-table
+vim.o.formatoptions = "jcrqlp" -- see :h fo-table
