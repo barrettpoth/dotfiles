@@ -26,6 +26,30 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- move visually selected text up and down
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- append next line to this one but keep cursor in same place
+vim.keymap.set('n', 'J', 'mzJ`z')
+
+-- pasted over item and deleted item goes to nowhere buffer
+vim.keymap.set('x', '<leader>p', [["_dP]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+
+-- yank to system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+
+-- Resize with ctrl shift hjkl
+vim.keymap.set('n', '<S-A-k>', ':resize -2<CR>')
+vim.keymap.set('n', '<S-A-j>', ':resize +2<CR>')
+vim.keymap.set('n', '<S-A-h>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<S-A-l>', ':vertical resize +2<CR>')
+
+-- remap increment nums to avoid tmux leader conflict
+vim.keymap.set('v', 'g<C-b>', 'g<C-a>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
