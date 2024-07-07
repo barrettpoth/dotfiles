@@ -1,13 +1,5 @@
 -- [[ Configure and install plugins ]]
---
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
---  To update plugins you can run
---    :Lazy update
---
+
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
@@ -62,8 +54,6 @@ require('lazy').setup({
   require 'barrettpoth/plugins/test',
 
   require 'barrettpoth/plugins/tmux-nav',
-
-  require 'barrettpoth/plugins/pandoc',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

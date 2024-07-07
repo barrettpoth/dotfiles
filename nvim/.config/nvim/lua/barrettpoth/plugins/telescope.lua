@@ -83,6 +83,8 @@ return {
       vim.keymap.set('n', '<leader>sbl', builtin.git_bcommits, { desc = '[T]elescope [b]uffer commit [l]og' })
       vim.keymap.set('n', '<leader>sb', builtin.git_branches, { desc = '[T]elescope git [b]ranch' })
 
+      vim.keymap.set('n', '<leader>st', ':Telescope tmux sessions<CR>', { desc = '[S]earch [T]mux sessions' })
+
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
