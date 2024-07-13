@@ -18,7 +18,7 @@ return {
       ['typescript'] = true,
       ['go'] = true,
       ['ruby'] = true,
-      ['markdown'] = true,
+      ['markdown'] = false,
     }
   end,
 }

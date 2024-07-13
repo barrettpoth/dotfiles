@@ -50,6 +50,8 @@ vim.keymap.set('n', '<S-A-l>', ':vertical resize +2<CR>')
 -- remap increment nums to avoid tmux leader conflict
 vim.keymap.set('v', 'g<C-b>', 'g<C-a>')
 
+vim.keymap.set('n', '<leader>e', ':Oil<CR>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
