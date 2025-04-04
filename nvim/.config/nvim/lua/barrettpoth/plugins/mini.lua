@@ -2,24 +2,20 @@ return {
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
       statusline.setup { use_icons = vim.g.have_nerd_font }
 
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
-      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      vim.api.nvim_set_hl(0, 'MiniStatuslineDevinfo', { fg = '#ff6e5e', bg = '#3c4048' })
+      vim.api.nvim_set_hl(0, 'MiniStatuslineFilename', { fg = '#ffffff', bg = '#3c4048' })
+      vim.api.nvim_set_hl(0, 'MiniStatuslineFileinfo', { fg = '#16181a', bg = '#bd5eff' })
+
+      -- set non-active statusline to a different color
+      vim.api.nvim_set_hl(0, 'MiniStatuslineInactive', { fg = '#ffffff', bg = '#1e2124' })
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
