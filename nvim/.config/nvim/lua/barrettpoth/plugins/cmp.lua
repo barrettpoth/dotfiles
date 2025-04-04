@@ -28,6 +28,17 @@ return {
       luasnip.config.setup {}
 
       cmp.setup {
+        window = {
+          completion = { -- rounded border; thin-style scrollbar
+            border = 'rounded',
+            scrollbar = '', -- ║
+          },
+          documentation = { -- no border; native-style scrollbar
+            border = 'rounded',
+            scrollbar = '', -- ║
+            -- other options
+          },
+        },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)

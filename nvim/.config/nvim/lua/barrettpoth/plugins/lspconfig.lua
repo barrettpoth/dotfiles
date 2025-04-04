@@ -86,6 +86,7 @@ return {
             },
           },
         },
+        ruby_lsp = {},
       }
 
       require('mason').setup()
@@ -99,11 +100,38 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      -- Specify how the border looks like
+      local border = {
+        { '┌', 'FloatBorder' },
+        { '─', 'FloatBorder' },
+        { '┐', 'FloatBorder' },
+        { '│', 'FloatBorder' },
+        { '┘', 'FloatBorder' },
+        { '─', 'FloatBorder' },
+        { '└', 'FloatBorder' },
+        { '│', 'FloatBorder' },
+      }
+
+      -- Add border to the diagnostic popup window
+      vim.diagnostic.config {
+        virtual_text = {
+          prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+        },
+        float = { border = border },
+      }
+
+      -- Add the border on hover and on signature help popup window
+      local handlers = {
+        ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+        ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+      }
+
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            server.handlers = vim.tbl_deep_extend('force', {}, handlers, server.handlers or {})
             require('lspconfig')[server_name].setup(server)
           end,
         },

@@ -14,7 +14,7 @@ return {
       },
       extensions = {
         telescope = true,
-        notify = true,
+        notify = false,
         mini = true,
       },
     }
