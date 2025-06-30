@@ -86,7 +86,17 @@ return {
             },
           },
         },
-        ruby_lsp = {},
+        ruby_lsp = {
+          init_options = {
+            formatter = 'standard',
+            linters = { 'standard' },
+            addonSettings = {
+              ['Ruby LSP Rails'] = {
+                enablePendingMigrationsPrompt = false,
+              },
+            },
+          },
+        },
       }
 
       require('mason').setup()
