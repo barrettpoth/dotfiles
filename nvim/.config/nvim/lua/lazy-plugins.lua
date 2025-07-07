@@ -17,8 +17,6 @@ require('lazy').setup({
 
   require 'barrettpoth/plugins/theme',
 
-  require 'barrettpoth/plugins/todo-comments',
-
   require 'barrettpoth/plugins/mini',
 
   require 'barrettpoth/plugins/treesitter',
@@ -52,6 +50,8 @@ require('lazy').setup({
   'tpope/vim-rails',
 
   require 'barrettpoth/plugins/autotag',
+
+  'RRethy/nvim-treesitter-endwise',
 
   require 'barrettpoth/plugins/test',
 
