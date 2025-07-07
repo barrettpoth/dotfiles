@@ -80,7 +80,6 @@ plugins=(
     yarn
     zsh-syntax-highlighting
     tmux
-    rvm
 )
 
 VI_MODE_SET_CURSOR=true
