@@ -45,8 +45,6 @@ require('lazy').setup({
 
   require 'barrettpoth/plugins/markdown-preview',
 
-  require 'barrettpoth/plugins/markdown',
-
   'tpope/vim-rails',
 
   require 'barrettpoth/plugins/autotag',
