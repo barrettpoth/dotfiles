@@ -5,67 +5,45 @@ require('lazy').setup({
 
   { 'numToStr/Comment.nvim', opts = {} },
 
-  require 'barrettpoth/plugins/gitsigns',
+  require 'lazy-plugins/gitsigns',
 
-  require 'barrettpoth/plugins/telescope',
+  require 'lazy-plugins/telescope',
 
-  require 'barrettpoth/plugins/theme',
+  require 'lazy-plugins/theme',
 
-  require 'barrettpoth/plugins/mini',
+  require 'lazy-plugins/mini',
 
-  require 'barrettpoth/plugins/treesitter',
+  require 'lazy-plugins/treesitter',
 
-  require 'barrettpoth/plugins/indent_line',
+  require 'lazy-plugins/indent_line',
 
-  require 'barrettpoth/plugins/lint',
+  require 'lazy-plugins/lint',
 
-  require 'barrettpoth/plugins/autopairs',
+  require 'lazy-plugins/autopairs',
 
-  -- NOTE: everything above came recommended by kickstart-nvim, below are my additions
+  require 'lazy-plugins/harpoon',
 
-  require 'barrettpoth/plugins/harpoon',
+  require 'lazy-plugins/git',
 
-  require 'barrettpoth/plugins/git',
-
-  require 'barrettpoth/plugins/surround',
+  require 'lazy-plugins/surround',
 
   'farmergreg/vim-lastplace',
 
   'camgraff/telescope-tmux.nvim',
 
-  require 'barrettpoth/plugins/markdown-preview',
+  require 'lazy-plugins/markdown-preview',
 
   'tpope/vim-rails',
 
-  require 'barrettpoth/plugins/autotag',
+  require 'lazy-plugins/autotag',
 
   'RRethy/nvim-treesitter-endwise',
 
-  require 'barrettpoth/plugins/test',
+  require 'lazy-plugins/test',
 
-  require 'barrettpoth/plugins/tmux-nav',
+  require 'lazy-plugins/tmux-nav',
 
-  require 'barrettpoth/plugins/oil',
+  require 'lazy-plugins/oil',
 
-  require 'barrettpoth/plugins/fold',
-}, {
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
+  require 'lazy-plugins/fold',
 })
