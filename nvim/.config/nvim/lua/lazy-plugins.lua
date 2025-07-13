@@ -9,19 +9,11 @@ require('lazy').setup({
 
   require 'barrettpoth/plugins/telescope',
 
-  require 'barrettpoth/plugins/lspconfig',
-
-  require 'barrettpoth/plugins/conform',
-
-  require 'barrettpoth/plugins/cmp',
-
   require 'barrettpoth/plugins/theme',
 
   require 'barrettpoth/plugins/mini',
 
   require 'barrettpoth/plugins/treesitter',
-
-  require 'barrettpoth/plugins/debug',
 
   require 'barrettpoth/plugins/indent_line',
 
@@ -32,8 +24,6 @@ require('lazy').setup({
   -- NOTE: everything above came recommended by kickstart-nvim, below are my additions
 
   require 'barrettpoth/plugins/harpoon',
-
-  require 'barrettpoth/plugins/copilot',
 
   require 'barrettpoth/plugins/git',
 
