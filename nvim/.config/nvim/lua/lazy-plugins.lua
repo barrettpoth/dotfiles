@@ -39,11 +39,7 @@ require('lazy').setup({
 
   'RRethy/nvim-treesitter-endwise',
 
-  require 'lazy-plugins/test',
-
   require 'lazy-plugins/tmux-nav',
 
   require 'lazy-plugins/oil',
-
-  require 'lazy-plugins/fold',
 })
